@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Richa 😊</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', sans-serif;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #ffe6f0, #e6f7ff);
+        overflow: hidden;
+    }
+
+    .container {
+        background: #ffffff;
+        padding: 30px;
+        border-radius: 20px;
+        text-align: center;
+        width: 360px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        animation: fadeIn 1.2s ease;
+    }
+
+    h1 {
+        color: #ff6699;
+        margin-bottom: 10px;
+    }
+
+    p {
+        color: #555;
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+    .cartoons img {
+        width: 80px;
+        margin: 10px;
+        animation: float 3s infinite ease-in-out;
+    }
+
+    button {
+        padding: 12px 22px;
+        margin: 10px;
+        border: none;
+        border-radius: 25px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    #yes {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    #yes:hover {
+        transform: scale(1.1);
+    }
+
+    #no {
+        background-color: #ff4d4d;
+        color: white;
+        position: absolute;
+    }
+
+    @keyframes float {
+        0%,100% { transform: translateY(0); }
+        50% { transform: translateY(-12px); }
+    }
+
+    @keyframes fadeIn {
+        from {opacity:0; transform: translateY(20px);}
+        to {opacity:1; transform: translateY(0);}
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Hi Richa! 🌸</h1>
+
+    <p>
+        I wanted to do something different instead of just saying “Hi”.<br><br>
+        So I made this small project 😊<br>
+        Because good friendships start with simple efforts.<br><br>
+
+        You seem like a really kind and positive person,<br>
+        and I would genuinely like to know you better.
+    </p>
+
+    <h3>Can we start a friendship? ✨</h3>
+
+    <button id="yes" onclick="accepted()">Yes 😄</button>
+    <button id="no" 
+        onmouseover="moveButton()" 
+        onfocus="moveButton()">
+    No 🙈
+</button>
+</div>
+
+<script>
+function accepted() {
+    document.body.innerHTML = `
+        <div style="display:flex;justify-content:center;align-items:center;
+        height:100vh;font-family:Segoe UI;text-align:center;
+        background:linear-gradient(135deg,#e6f7ff,#ffe6f0);">
+            <div>
+                <h1>Yay! 🎉</h1>
+                <p>This is the beginning of a nice friendship 😊</p>
+                <p>Now you officially have one more person to share smiles with!</p>
+            </div>
+        </div>
+    `;
+}
+
+function moveButton() {
+    const btn = document.getElementById("no");
+    const x = Math.random() * (window.innerWidth - 100);
+    const y = Math.random() * (window.innerHeight - 50);
+
+    btn.style.left = x + "px";
+    btn.style.top = y + "px";
+}
+</script>
+
+</body>
+</html>
